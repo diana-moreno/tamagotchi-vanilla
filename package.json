@@ -16,5 +16,8 @@
     "eslint-plugin-import": "^2.20.2",
     "jest": "^26.0.1",
     "parcel-bundler": "^1.12.4"
-  }
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
 }
