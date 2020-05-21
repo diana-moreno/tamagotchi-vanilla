@@ -1,6 +1,7 @@
 import gameState from "./gameState";
 
-const TICK_RATE = 3000;
+import { TICK_RATE } from "./constants";
+import initButtons from "./buttons";
 
 // not use setinterval
 
@@ -10,6 +11,7 @@ function tick() {
 
 function init() {
   console.log("starting game");
+  initButtons(gameState.handleUserAction);
 
   let newtTimeToTick = Date.now();
 
