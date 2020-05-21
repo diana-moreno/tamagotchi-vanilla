@@ -123,7 +123,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.default = exports.handleUserAction = void 0;
 const gameState = {
   current: "INIT",
   clock: 1,
@@ -132,27 +132,127 @@ const gameState = {
     console.log("clock", this.clock);
     this.clock++;
     return this.clock;
+  },
+
+  startGame() {
+    console.log("hatching");
+    this.current = "HATCHING";
+    this.wakeTime = this.clock + 3;
+  },
+
+  wake() {
+    console.log("awoken");
+    this.current = "IDLING";
+    this.wakeTime = -1;
+  },
+
+  handleUserAction(icon) {
+    if (["SLEEP", "FEEDING", "CELEBRATING", "HATCHING"].includes(this.current)) {
+      // do nothing
+      return;
+    }
+
+    if (this.current === "INIT" || this.current === "DEAD") {
+      this.startGame();
+      return;
+    }
+
+    switch (icon) {
+      case "weather":
+        this.changeWeather();
+        break;
+
+      case "poop":
+        this.cleanUpPoop();
+        break;
+
+      case "fish":
+        this.feed();
+        break;
+    }
+  },
+
+  changeWeather() {
+    console.log("change weather");
+  },
+
+  cheanUppoop() {
+    console.log("clean up poop");
+  },
+
+  feed() {
+    console.log("feed");
   }
 
 }; // en diccionarios se accede con this
 
+const handleUserAction = handleUserAction.bind(gameState);
+exports.handleUserAction = handleUserAction;
 var _default = gameState;
 exports.default = _default;
-},{}],"init.js":[function(require,module,exports) {
+},{}],"constants.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ICONS = exports.TICK_RATE = void 0;
+const TICK_RATE = 3000;
+exports.TICK_RATE = TICK_RATE;
+const ICONS = ["fish", "poop", "weather"];
+exports.ICONS = ICONS;
+},{}],"buttons.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = initButtons;
+
+var _constants = require("./constants");
+
+const toggleHighlighted = (icon, show) => document.querySelector(`.${_constants.ICONS[icon]}-icon`).classList.toggle("highlighted", show);
+
+function initButtons(handleUserAction) {
+  let selectedIcon = 0;
+
+  function buttonClick({
+    target
+  }) {
+    if (target.classList.contains("left-btn")) {
+      toggleHighlighted(selectedIcon, false);
+      selectedIcon = (2 + selectedIcon) % _constants.ICONS.length;
+      toggleHighlighted(selectedIcon, true);
+    } else if (target.classList.contains("right-btn")) {
+      toggleHighlighted(selectedIcon, false);
+      selectedIcon = (1 + selectedIcon) % _constants.ICONS.length;
+      toggleHighlighted(selectedIcon, true);
+    } else {
+      handleUserAction(_constants.ICONS[selectedIcon]);
+    }
+  }
+
+  document.querySelector(".buttons").addEventListener("click", buttonClick);
+}
+},{"./constants":"constants.js"}],"init.js":[function(require,module,exports) {
 "use strict";
 
 var _gameState = _interopRequireDefault(require("./gameState"));
 
+var _constants = require("./constants");
+
+var _buttons = _interopRequireDefault(require("./buttons"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const TICK_RATE = 3000; // not use setinterval
-
+// not use setinterval
 function tick() {
   console.log("tick", Date.now());
 }
 
 function init() {
   console.log("starting game");
+  (0, _buttons.default)(_gameState.default.handleUserAction);
   let newtTimeToTick = Date.now();
 
   function nextAnimationFrame() {
@@ -161,7 +261,7 @@ function init() {
     if (newtTimeToTick <= now) {
       _gameState.default.tick();
 
-      newtTimeToTick = now + TICK_RATE;
+      newtTimeToTick = now + _constants.TICK_RATE;
     }
 
     requestAnimationFrame(nextAnimationFrame);
@@ -172,7 +272,7 @@ function init() {
 }
 
 init();
-},{"./gameState":"gameState.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./gameState":"gameState.js","./constants":"constants.js","./buttons":"buttons.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -200,7 +300,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46101" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35587" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
