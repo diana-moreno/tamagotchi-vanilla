@@ -1,5 +1,5 @@
 .btn {
-  background-image: url(/NotSelected.9bda7e18.png);
+  background-image: url(/NotSelected.9329cb94.png);
   background-position: 0px;
   width: 62px;
   height: 65px;
@@ -20,15 +20,15 @@
 
 .btn:hover,
 .btn:focus {
-  background-image: url(/Hover.7972d370.png);
+  background-image: url(/Hover.f95cde02.png);
 }
 
 .btn:active {
-  background-image: url(/Selected.f7fd4df2.png);
+  background-image: url(/Selected.52499e66.png);
 }
 
 .icon {
-  background-image: url(/NotSelected.9e04faf5.png);
+  background-image: url(/NotSelected.4329e64a.png);
   background-position: 0px;
   width: 56px;
   height: 65px;
@@ -47,21 +47,21 @@
 }
 
 .icon.highlighted {
-  background-image: url(/Hover.2338587a.png);
+  background-image: url(/Hover.9a1061c1.png);
 }
 
 .icon.active {
-  background-image: url(/Selected.f11b8f7a.png);
+  background-image: url(/Selected.0f9a9d7e.png);
 }
 
 .fox-static {
-  background-image: url(/FoxBase.ac352e9d.png);
+  background-image: url(/FoxBase.11f4931a.png);
   width: 117px;
   height: 165px;
 }
 
 .fox-idling {
-  background-image: url(/AtRest.6b658b1d.png);
+  background-image: url(/AtRest.b8cc18b7.png);
   background-repeat: no-repeat;
   width: 117px;
   height: 165px;
@@ -75,7 +75,7 @@
 }
 
 .fox.fox-pooping {
-  background-image: url(/Pooping.8adb046c.png);
+  background-image: url(/Pooping.a5fb9788.png);
   background-position: -1836px;
   background-repeat: no-repeat;
   width: 204px;
@@ -84,7 +84,7 @@
 }
 
 .fox.fox-pooped {
-  background-image: url(/Pooping.8adb046c.png);
+  background-image: url(/Pooping.a5fb9788.png);
   background-position: -1836px;
   background-repeat: no-repeat;
   width: 204px;
@@ -101,7 +101,7 @@
 }
 
 .fox-celebrate.fox {
-  background-image: url(/Yay.0dfdb865.png);
+  background-image: url(/Yay.6bb1749d.png);
   background-repeat: no-repeat;
   width: 130.8px;
   height: 213px;
@@ -115,7 +115,7 @@
 }
 
 .fox-rain.fox {
-  background-image: url(/Rain.600573d2.png);
+  background-image: url(/Rain.666c37ad.png);
   background-repeat: no-repeat;
   width: 134px;
   height: 153px;
@@ -129,7 +129,7 @@
 }
 
 .fox-hungry.fox {
-  background-image: url(/Hungry.e64ddbd5.png);
+  background-image: url(/Hungry.09c61593.png);
   background-repeat: no-repeat;
   width: 130px;
   height: 160px;
@@ -144,7 +144,7 @@
 }
 
 .fox-eating.fox {
-  background-image: url(/Eating.12c06356.png);
+  background-image: url(/Eating.232e8f73.png);
   background-position: -1865.7px;
   background-repeat: no-repeat;
   width: 207.3px;
@@ -164,7 +164,7 @@
 }
 
 .fox-egg.fox {
-  background-image: url(/Egg.c48dcb6e.png);
+  background-image: url(/Egg.e1e2790a.png);
   background-repeat: no-repeat;
   background-position: -1050px;
   width: 175px;
@@ -182,7 +182,7 @@
 }
 
 .fox-dead.fox {
-  background-image: url(/TombStone.f2f21ebd.png);
+  background-image: url(/TombStone.3532abb1.png);
   background-repeat: no-repeat;
   width: 118px;
   height: 119px;
@@ -196,7 +196,7 @@
 }
 
 .fox-sleep.fox {
-  background-image: url(/Sleeping.a2f70ceb.png);
+  background-image: url(/Sleeping.fc2beb22.png);
   background-repeat: no-repeat;
   width: 250px;
   height: 155px;
@@ -211,7 +211,7 @@
 
 .foreground-rain {
   display: none;
-  background-image: url(/rain.97ab63ec.png);
+  background-image: url(/rain.a5369d9c.png);
   animation: raining 0.5s steps(3) infinite;
   width: 606px;
   height: 516px;
@@ -232,7 +232,7 @@
 }
 
 .poop-bag {
-  background-image: url(/PoopBag.a2951731.png);
+  background-image: url(/PoopBag.bdf0292e.png);
   animation: swing-poop-bag 1s steps(3) infinite alternate;
   width: 99px;
   height: 104px;
@@ -246,28 +246,28 @@
 }
 
 .frame {
-  background-image: url(/FRAME.4b64b0ee.png);
+  background-image: url(/FRAME.5cc920a1.png);
 }
 
 .game {
-  background-image: url(/DAY.6bb28239.png);
+  background-image: url(/DAY.6aaeec74.png);
 }
 
 .game.night {
-  background-image: url(/NIGHT.1fa3ed43.png);
+  background-image: url(/NIGHT.7e06881c.png);
 }
 
 .game.dead {
-  background-image: url(/DEAD.2fdcc29e.png);
+  background-image: url(/DEAD.4fedad9d.png);
 }
 
 .game.rain {
-  background-image: url(/RAINY.259b0634.png);
+  background-image: url(/RAINY.456b1446.png);
 }
 
 body {
-  background-image: url(/Canvas.2b1a6a7b.png);
+  background-image: url(/Canvas.d9e92195.png);
 }
 
 
-/*# sourceMappingURL=/sprites.477892da.css.map */
+/*# sourceMappingURL=/sprites.65d8fa68.css.map */
