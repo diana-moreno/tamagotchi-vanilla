@@ -47,7 +47,7 @@ body {
   left: -19px;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 .buttons {
   position: absolute;
@@ -84,7 +84,7 @@ body {
   left: 0;
   right: 0;
   background-color: #0000009e;
-  padding: 233px 0;
+  padding: 233px 7rem;
   color: white;
   font-size: 2rem;
   text-align: center;
@@ -127,7 +127,7 @@ body {
   left: 290px;
 }
 .fox-rain {
-  top: 262px;
+  top: 362px;
 }
 .fox-hungry {
   top: 362px;

@@ -2,15 +2,12 @@ import gameState, { handleUserAction } from "./gameState";
 
 import { TICK_RATE } from "./constants";
 import initButtons from "./buttons";
+import { toggleIcons } from "../ui";
 
 // not use setinterval
 
-function tick() {
-  console.log("tick", Date.now());
-}
-
 function init() {
-  console.log("starting game");
+  toggleIcons(false);
   initButtons(handleUserAction);
 
   let newtTimeToTick = Date.now();
