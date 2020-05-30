@@ -9,6 +9,7 @@ export default function initButtons(handleUserAction) {
   let selectedIcon = 0;
 
   function buttonClick({ target }) {
+    debugger;
     if (target.classList.contains("left-btn")) {
       toggleHighlighted(selectedIcon, false);
       selectedIcon = (2 + selectedIcon) % ICONS.length;

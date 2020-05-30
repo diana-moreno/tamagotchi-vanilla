@@ -53,5 +53,5 @@ const gameState = {
 
 // en diccionarios se accede con this
 
-export const handleUserAction = handleUserAction.bind(gameState);
+export const handleUserAction = gameState.handleUserAction.bind(gameState);
 export default gameState;
