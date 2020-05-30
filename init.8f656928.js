@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../ui.js":[function(require,module,exports) {
+})({"ui.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -160,7 +160,7 @@ const toggleIcons = function toggleIcons(show) {
 };
 
 exports.toggleIcons = toggleIcons;
-},{}],"constants.js":[function(require,module,exports) {
+},{}],"src/constants.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -192,7 +192,7 @@ exports.getNextDieTime = getNextDieTime;
 const getNextPoopTime = clock => Math.floor(Math.random() * 3) + 8 + clock;
 
 exports.getNextPoopTime = getNextPoopTime;
-},{}],"gameState.js":[function(require,module,exports) {
+},{}],"src/gameState.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -382,7 +382,7 @@ const handleUserAction = gameState.handleUserAction.bind(gameState);
 exports.handleUserAction = handleUserAction;
 var _default = gameState;
 exports.default = _default;
-},{"../ui":"../ui.js","./constants":"constants.js"}],"buttons.js":[function(require,module,exports) {
+},{"../ui":"ui.js","./constants":"src/constants.js"}],"src/buttons.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -415,7 +415,7 @@ function initButtons(handleUserAction) {
 
   document.querySelector(".buttons").addEventListener("click", buttonClick);
 }
-},{"./constants":"constants.js"}],"init.js":[function(require,module,exports) {
+},{"./constants":"src/constants.js"}],"src/init.js":[function(require,module,exports) {
 "use strict";
 
 var _gameState = _interopRequireWildcard(require("./gameState"));
@@ -455,7 +455,7 @@ function init() {
 }
 
 init();
-},{"./gameState":"gameState.js","./constants":"constants.js","./buttons":"buttons.js","../ui":"../ui.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./gameState":"src/gameState.js","./constants":"src/constants.js","./buttons":"src/buttons.js","../ui":"ui.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -483,7 +483,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36839" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40863" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -659,5 +659,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","init.js"], null)
-//# sourceMappingURL=/init.9d6cb373.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/init.js"], null)
+//# sourceMappingURL=/init.8f656928.js.map
